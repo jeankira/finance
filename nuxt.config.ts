@@ -1,9 +1,20 @@
 export default {
-  ssr: true,  // Define se o Nuxt será usado como SSR ou SPA
-  router: {
-    base: '/',  // Use '/' para o caminho raiz
-  },
+  // Defina como 'false' se você preferir uma SPA
+  ssr: true,
+
   css: ['~/assets/css/tailwind.css'],
   buildModules: ['@nuxtjs/tailwindcss'],
+
+  // Adicione aqui seus plugins
+  plugins: [],
+
+  router: {
+    base: '/',  // Verifique se a base está configurada corretamente
+  },
+
+  build: {
+    transpile: ['pinia'],  // Caso você use Pinia para o estado global
+  },
+
   compatibilityDate: '2024-11-26',
 };
